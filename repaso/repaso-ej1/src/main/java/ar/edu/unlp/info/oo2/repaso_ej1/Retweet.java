@@ -1,0 +1,21 @@
+package ar.edu.unlp.info.oo2.repaso_ej1;
+
+public class Retweet extends Tweet {
+	
+	private Tweet origin;
+	
+	public Retweet(Tweet tweet) {
+		super(tweet.getText());
+		this.origin = tweet;
+	}
+	
+	public String getText() {
+		return this.origin.getText();
+	}
+	
+	public Tweet getOrigin() {
+		return this.origin;
+	}
+	
+	
+}

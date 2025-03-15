@@ -1,0 +1,12 @@
+package ar.edu.unlp.info.oo2.repaso_ej1;
+
+public class Tweet {
+
+	private String text;
+	
+	Tweet(String text){
+		this.text = text;
+	}
+	
+	
+}
