@@ -10,7 +10,7 @@
 
     - _Extract Method_: Se consideran los métodos largos, y sus fragmentos que requieren de comentarios para saber qué hacen. Estos fragmentos que se pueden agrupar se transforman en un método cuyo nombre explique qué es lo que hace. Fowler remarca la importancia de darle un buen nombre, tal que indique claramente qué es lo que hace.
 
-        **Mecánica**:
+        **Mecánica**
 
         - Crear un nuevo método, y nombrarlo según la intención del método.
         - Copiar el código extraído del método de orígen al nuevo método.

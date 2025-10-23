@@ -66,7 +66,7 @@
 
 ---
 
-3. _Cálculos_
+3.  _Cálculos_
 
     _Analice el código que se muestra a continuación. Indique qué defectos encuentra y cómo pueden corregirse._
 
@@ -87,4 +87,152 @@
 
     ## _Respuesta:_
 
-    Se debe realizar
+    Se debe realizar Extract Method. Primero lo voy a hacer sobre el calculo del total de salarios.
+
+    1. Crear un nuevo método:
+
+        ```java
+        public void imprimirValores() {
+            int totalEdades = 0;
+            double promedioEdades = 0;
+            for (Empleado empleado : personal) {
+                totalEdades = totalEdades + empleado.getEdad();
+                totalSalarios = totalSalarios + empleado.getSalario();
+            }
+            promedioEdades = totalEdades / personal.size();
+            String message = String.format("El promedio de las edades es %s y el total de salarios es %s", promedioEdades, totalSalarios);
+            System.out.println(message);
+        }
+
+        public double calcularTotalDeSalarios() {
+        }
+        ```
+
+    2. Copiar el código extraído:
+
+        ```java
+        public void imprimirValores() {
+            int totalEdades = 0;
+            double totalSalarios = 0;
+            double promedioEdades = 0;
+            for (Empleado empleado : personal) {
+                totalEdades = totalEdades + empleado.getEdad();
+                totalSalarios = totalSalarios + empleado.getSalario();
+            }
+            promedioEdades = totalEdades / personal.size();
+            String message = String.format("El promedio de las edades es %s y el total de salarios es %s", promedioEdades, totalSalarios);
+            System.out.println(message);
+        }
+
+        public double calcularTotalDeSalarios(totalSalarios) {
+            for (Empleado empleado: personal) {
+                totalSalarios = totalSalarios + empleado.getSalario();
+            }
+            return totalSalarios;
+        }
+        ```
+
+    3. Mover variables temporales al método destino:
+
+        ```java
+        public void imprimirValores() {
+            int totalEdades = 0;
+            double promedioEdades = 0;
+            for (Empleado empleado : personal) {
+                totalEdades = totalEdades + empleado.getEdad();
+                totalSalarios = totalSalarios + empleado.getSalario();
+            }
+            promedioEdades = totalEdades / personal.size();
+            String message = String.format("El promedio de las edades es %s y el total de salarios es %s", promedioEdades, totalSalarios);
+            System.out.println(message);
+        }
+
+        public double calcularTotalDeSalarios() {
+            double totalSalarios = 0;
+            for (Empleado empleado: personal) {
+                totalSalarios = totalSalarios + empleado.getSalario();
+            }
+            return totalSalarios;
+        }
+        ```
+
+    4. Reemplazar el código extraído por el llamado al método:
+
+        ```java
+        public void imprimirValores() {
+            int totalEdades = 0;
+            double promedioEdades = 0;
+            for (Empleado empleado : personal) {
+                totalEdades = totalEdades + empleado.getEdad();
+            }
+            promedioEdades = totalEdades / personal.size();
+            String message = String.format("El promedio de las edades es %s y el total de salarios es %s", promedioEdades, calcularTotalDeSalarios());
+            System.out.println(message);
+        }
+
+        public double calcularTotalDeSalarios() {
+            double result = 0;
+            for (Empleado empleado: personal) {
+                result = result + empleado.getSalario();
+            }
+            return result;
+        }
+        ```
+
+    El método sigue siendo largo. Se debe extraer un método más siguiendo los mismos pasos. Resultado final:
+
+    ```java
+    public void imprimirValores() {
+        double promedioEdades = 0;
+        promedioEdades = calcularTotalEdades() / personal.size();
+        String message = String.format("El promedio de las edades es %s y el total de salarios es %s", promedioEdades, calcularTotalDeSalarios());
+        System.out.println(message);
+    }
+
+    public double calcularTotalDeSalarios() {
+        double result = 0;
+        for (Empleado empleado: personal) {
+            result = result + empleado.getSalario();
+        }
+        return result;
+    }
+
+    public int calcularTotalEdades() {
+        int result = 0;
+        for (Empleado empleado : personal) {
+            result = result + empleado.getEdad();
+        }
+        return result
+    }
+    ```
+
+    Aún se puede realizar una extracción más.
+
+    ```java
+    public void imprimirValores() {
+        String message = String.format("El promedio de las edades es %s y el total de salarios es %s", calcularPromedioDeEdades(), calcularTotalDeSalarios());
+        System.out.println(message);
+    }
+
+    public double calcularTotalDeSalarios() {
+        double result = 0;
+        for (Empleado empleado: personal) {
+            result = result + empleado.getSalario();
+        }
+        return result;
+    }
+
+    public int calcularTotalEdades() {
+        int result = 0;
+        for (Empleado empleado : personal) {
+            result = result + empleado.getEdad();
+        }
+        return result
+    }
+
+    public double calcularPromedioDeEdades() {
+        return calcularTotalEdades() / personal.size();
+    }
+    ```
+
+## Ejercicio 2
