@@ -57,8 +57,8 @@
 
     _Al revisar el siguiente diseño inicial (Figura 1), se decidió realizar un cambio para evitar lo que se consideraba un mal olor. El diseño modificado se muestra en la Figura 2. Indique qué tipo de cambio se realizó y si lo considera apropiado. Justifique su respuesta._
 
-    ![uml 1](./img/UML-ej1.2-1.png)</br>
-    ![uml 2](./img/UML-ej1.2-2.png)
+    ![uml 1](img/UML-ej1.2-1.png)</br>
+    ![uml 2](img/UML-ej1.2-2.png)
 
     ## _Respuesta:_
 

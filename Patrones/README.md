@@ -10,7 +10,7 @@
     -   Abstract class
     -   Concrete class
 -   Estructura:</br>
-    ![templatemethod-structure](./img/TemplateMethod-Structure.png)
+    ![templatemethod-structure](img/TemplateMethod-Structure.png)
 
 ### Strategy
 
@@ -19,7 +19,7 @@
     -   Strategy
     -   ConcreteStrategy
 -   Estructura:</br>
-    ![strategy-structure](./img/Strategy-Structure.png)
+    ![strategy-structure](img/Strategy-Structure.png)
 
 ### State
 
@@ -28,7 +28,7 @@
     -   State
     -   ConcreteState
 -   Estructura:</br>
-    ![state-structure](./img/State-Structure.png)
+    ![state-structure](img/State-Structure.png)
 
 ## Patrones estructurales
 
@@ -40,7 +40,7 @@
     -   Leaf
     -   Composite
 -   Estructura:</br>
-    ![composite-structure](./img/Composite-Structure.png)
+    ![composite-structure](img/Composite-Structure.png)
 
 ### Decorator
 
@@ -50,7 +50,7 @@
     -   Decorator
     -   Concrete Decorator
 -   Estructura:</br>
-    ![decorator-structure](./img/Decorator-Structure.png)
+    ![decorator-structure](img/Decorator-Structure.png)
 
 ### Adapter
 
@@ -60,7 +60,7 @@
     -   Adaptee
     -   Adapter
 -   Estructura:</br>
-    ![adapter-structure](./img/Adapter-Structure.png)
+    ![adapter-structure](img/Adapter-Structure.png)
 
 ### Proxy
 
@@ -69,7 +69,7 @@
     -   Real Subject
     -   Proxy
 -   Estructura:</br>
-    ![proxy-structure](./img/Proxy-Structure.png)
+    ![proxy-structure](img/Proxy-Structure.png)
 
 ## Patrones creacionales
 
@@ -81,4 +81,4 @@
     -   ConcreteBuilder
     -   Product
 -   Estructura:</br>
-    ![builder-structure](./img/Builder-Structure.png)
+    ![builder-structure](img/Builder-Structure.png)
