@@ -122,3 +122,20 @@
         - Encontrar todas las referencias al método viejo y cambiarlas al nuevo. Compilar y testear por cada cambio.
         - Eliminar el método anterior.
         - Compilar y testear.
+
+---
+
+### Refactoring to patterns
+
+-   _Form Template Method_:
+
+    **Mecánica**
+
+    -   Encontrar el método que es similar en todas las subclases y extraer sus partes en métodos idénticos (misma signatura y cuerpo en las subclases) o métodos únicos (distinta signatura y cuerpo)
+    -   Aplicar “Pull Up Method” para los métodos idénticos.
+    -   Aplicar “Rename Method” sobre los métodos únicos hasta que el método similar quede con cuerpo idéntico en las subclases.
+    -   Compilar y testear después de cada “rename”.
+    -   Aplicar “Rename Method” sobre los métodos similares de las subclases (esqueleto).
+    -   Aplicar “Pull Up Method” sobre los métodos similares.
+    -   Definir métodos abstractos en la superclase por cada método único de las subclases.
+    -   Compilar y testear
